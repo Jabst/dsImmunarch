@@ -10,7 +10,7 @@
 #' @export
 #'
 
-library(immunarch)
+#library(immunarch)
 
 geneUsageDS <- function (xvect, gene) {
   
@@ -19,7 +19,8 @@ geneUsageDS <- function (xvect, gene) {
   
   # return missing value if the input vector is not valid
   if(!check){
-    result <- geneUsage(xvect, .gene = gene)
+    #result <- geneUsage(xvect, .gene = gene)
+    result <- "Congrats hombre"
   }else{
     result <- NA
   }

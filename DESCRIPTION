@@ -8,6 +8,4 @@ Description: DataSHIELD server side wrapper for Immunarch functions
 AggregateMethods: geneUsageDS
 AssignMethods: log=base::log
 Depends: R (>= 3.4.0)
-Imports:
-    Immunarch
 Options: datashield.privacyLevel=5
