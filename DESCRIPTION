@@ -1,0 +1,13 @@
+Package: dsImmunarch
+Maintainer: <jast@inesctec.pt>
+Author: <jast@inesctec.pt>
+Version: 1.0.0
+License: GPL-3
+Title: DataSHIELD server side wrapper for Immunarch functions 
+Description: DataSHIELD server side wrapper for Immunarch functions 
+AggregateMethods: geneUsageDS
+AssignMethods: log=base::log
+Depends: R (>= 3.4.0)
+Imports:
+    Immunarch
+Options: datashield.privacyLevel=5
