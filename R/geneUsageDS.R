@@ -12,10 +12,16 @@
 
 #library(immunarch)
 
-geneUsageDS <- function (xvect, gene) {
+geneUsageDS <- function () {
+  
+  
   
   # check if the input vector is valid (i.e. meets DataSHIELD privacy criteria)
-  check <- isValidDS(xvect)
+  # check <- isValidDS(xvect)
+  
+  library(immunarch)
+  
+  print("olá amigos")
   
   # return missing value if the input vector is not valid
   if(!check){

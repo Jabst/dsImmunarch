@@ -1,7 +1,7 @@
 Package: dsImmunarch
 Maintainer: <jast@inesctec.pt>
 Author: <jast@inesctec.pt>
-Version: 1.0.0
+Version: 1.0.1
 License: GPL-3
 Title: DataSHIELD server side wrapper for Immunarch functions 
 Description: DataSHIELD server side wrapper for Immunarch functions 
