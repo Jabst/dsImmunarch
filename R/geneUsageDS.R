@@ -24,12 +24,12 @@ geneUsageDS <- function () {
   print("olá amigos")
   
   # return missing value if the input vector is not valid
-  if(!check){
+  #if(!check){
     #result <- geneUsage(xvect, .gene = gene)
     result <- "Congrats hombre"
-  }else{
-    result <- NA
-  }
+  #}else{
+   # result <- NA
+  #}
   
   return(result)
 }
