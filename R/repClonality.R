@@ -4,7 +4,7 @@ repClonality <- function (dataframe) {
   print(dim(dataframe))
   
   print(class(dataframe) == "data.frame")
-  print(dim(obj)[1])
+  print(dim(dataframe)[1])
   nfilter <- setFilterDS()
   print(nfilter)
   
