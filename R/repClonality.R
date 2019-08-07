@@ -1,6 +1,7 @@
 repClonality <- function (dataframe) {
+  library(dsBase)
   # check if the input vector is valid (i.e. meets DataSHIELD privacy criteria)
-  check <- isValidDS(xvect)
+  check <- isValidDS(dataframe)
   
   library(immunarch)
   ret <- parse_mixcr(dataframe)
