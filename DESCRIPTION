@@ -6,8 +6,8 @@ License: GPL-3
 Title: DataSHIELD server side wrapper for Immunarch functions
 Description: DataSHIELD server side wrapper for Immunarch functions
 AggregateMethods: geneUsageDS,
-    repClonality,
-    kmers
+    repClonalityDS,
+    kmersDS
 AssignMethods: log=base::log
 Depends: R (>= 3.4.0)
 Options: datashield.privacyLevel=5
