@@ -102,9 +102,7 @@ parse_mixcr <- function (.dataframe) {
     cat("Error: can't find a column with D genes\n")
   }
   
-  df <- read_delim(file = .filename, col_types = cols(),
-                   delim = .sep, skip = 0, comment = "",
-                   quote = "", escape_double = F, trim_ws = T)
+  df <- .dataframe
   
   #
   # return NULL if there is no clonotypes in the data frame
