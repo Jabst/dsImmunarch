@@ -23,6 +23,7 @@ geneUsageDS <- function (dataframe) {
   
   print("olá amigos")
   
+  print(dataframe)
   
   # return missing value if the input vector is not valid
   #if(!check){
