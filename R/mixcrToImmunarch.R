@@ -6,7 +6,7 @@ parse_mixcr <- function (.dataframe) {
     .data
   }
   
-  .filename <- .filename
+  
   .count <- 'clonecount'
   .sep = '\t'
   .vend <- "allvalignments"
