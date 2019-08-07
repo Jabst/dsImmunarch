@@ -1,7 +1,7 @@
 repClonality <- function (dataframe) {
   library(dsBase)
   
-  print(class(dataframe))
+  print(dim(dataframe))
   
   # check if the input vector is valid (i.e. meets DataSHIELD privacy criteria)
   check <- isValidDS(dataframe)
