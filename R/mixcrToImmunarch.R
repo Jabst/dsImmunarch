@@ -1,5 +1,31 @@
 parse_mixcr <- function (.dataframe) {
   
+  IMMCOL = new.env()
+  
+  IMMCOL$count  = "Clones"
+  IMMCOL$prop   = "Proportion"
+  IMMCOL$cdr3nt = "CDR3.nt"
+  IMMCOL$cdr3aa = "CDR3.aa"
+  IMMCOL$v      = "V.name"
+  IMMCOL$d      = "D.name"
+  IMMCOL$j      = "J.name"
+  IMMCOL$ve     = "V.end"
+  IMMCOL$ds     = "D.start"
+  IMMCOL$de     = "D.end"
+  IMMCOL$js     = "J.start"
+  IMMCOL$vnj    = "VJ.ins"
+  IMMCOL$vnd    = "VD.ins"
+  IMMCOL$dnj    = "DJ.ins"
+  IMMCOL$seq    = "Sequence"
+  IMMCOL$order  = c(IMMCOL$count, IMMCOL$prop, IMMCOL$cdr3nt, IMMCOL$cdr3aa,
+                    IMMCOL$v, IMMCOL$d, IMMCOL$j,
+                    IMMCOL$ve, IMMCOL$ds, IMMCOL$de, IMMCOL$js,
+                    IMMCOL$vnj, IMMCOL$vnd, IMMCOL$dnj, IMMCOL$seq)
+  IMMCOL$type   = c("numeric", "numeric", "character", "character",
+                    "character", "character", "character",
+                    "integer", "integer", "integer", "integer",
+                    
+  
   require(stringr)
   fix.alleles <- function (.data) {
     .data[[IMMCOL$v]] <- gsub("[*][[:digit:]]*", "", .data[[IMMCOL$v]])
