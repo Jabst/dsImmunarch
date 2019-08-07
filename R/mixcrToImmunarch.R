@@ -270,7 +270,45 @@ parse_mixcr <- function (.dataframe) {
   
   df[[IMMCOL$j]] <- gsub("([*][[:digit:]]*)([(][[:digit:]]*[.]*[[:digit:]]*[)])", "", df[[IMMCOL$j]])
   df[[IMMCOL$j]] <- gsub(",", ", ", df[[IMMCOL$j]])
-  df[[IMMCOL$j]] = str_replace_all(df[[IMMCOL$j]], '"', "").immunarch::postprocess(fix.alleles(df))
+  df[[IMMCOL$j]] = str_replace_all(df[[IMMCOL$j]], '"', "")
+  immunarch::.postprocess(fix.alleles(df))
+  
+  lol <- fix.alleles(df)
+  
+  logic = is.na(lol[[IMMCOL$cdr3aa]]) & !is.na(lol[[IMMCOL$cdr3nt]])
+  if (any(logic)) {
+    lol[[IMMCOL$cdr3aa]][logic] = bunch_translate(lol[[IMMCOL$cdr3nt]][logic])
+  }
+  
+  logic = is.na(lol[[IMMCOL$cdr3aa]]) & is.na(lol[[IMMCOL$cdr3nt]])
+  if (any(logic)) {
+    warn_msg = c("  [!] Warning: found", sum(logic))
+    warn_msg = c(warn_msg, "clonotypes with no nucleotide or amino acid CDR3 sequence.")
+    warn_msg = c(warn_msg, "\n      Please check if your files are the final repertoire files, not the intermediate ones before filtering out bad clonotypes.\n")
+    cat(warn_msg)
+  }
+  
+  for (colname in c(IMMCOL$ve, IMMCOL$ds, IMMCOL$de, IMMCOL$js, IMMCOL$vnj, IMMCOL$vnd, IMMCOL$dnj)) {
+    if (colname %in% colnames(lol)) {
+      logic = is.na(lol[[colname]])
+      lol[[colname]][logic] = -1
+      
+      logic = lol[[colname]] < 0
+      lol[[colname]][logic] = NA
+    }
+  }
+  
+  for (col_i in 1:length(IMMCOL$order)) {
+    colname = IMMCOL$order[col_i]
+    if (colname %in% colnames(lol)) {
+      if (!has_class(lol[[colname]], IMMCOL$type[col_i])) {
+        lol[[colname]] = as(lol[[colname]], IMMCOL$type[col_i])
+      }
+    }
+  }
+  
+  lol
+  
 }
 
 
