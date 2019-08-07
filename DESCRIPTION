@@ -3,9 +3,11 @@ Maintainer: <jast@inesctec.pt>
 Author: <jast@inesctec.pt>
 Version: 1.0.1
 License: GPL-3
-Title: DataSHIELD server side wrapper for Immunarch functions 
-Description: DataSHIELD server side wrapper for Immunarch functions 
-AggregateMethods: geneUsageDS
+Title: DataSHIELD server side wrapper for Immunarch functions
+Description: DataSHIELD server side wrapper for Immunarch functions
+AggregateMethods: geneUsageDS,
+    repClonality,
+    kmers
 AssignMethods: log=base::log
 Depends: R (>= 3.4.0)
 Options: datashield.privacyLevel=5
