@@ -270,8 +270,7 @@ parse_mixcr <- function (.dataframe) {
   
   df[[IMMCOL$j]] <- gsub("([*][[:digit:]]*)([(][[:digit:]]*[.]*[[:digit:]]*[)])", "", df[[IMMCOL$j]])
   df[[IMMCOL$j]] <- gsub(",", ", ", df[[IMMCOL$j]])
-  df[[IMMCOL$j]] = str_replace_all(df[[IMMCOL$j]], '"', "")
-  .postprocess(fix.alleles(df))
+  df[[IMMCOL$j]] = str_replace_all(df[[IMMCOL$j]], '"', "").immunarch::postprocess(fix.alleles(df))
 }
 
 
