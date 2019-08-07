@@ -213,7 +213,7 @@ parse_mixcr <- function (.dataframe) {
     df[[.count]] = 1
   }
   .freq = "Proportion"
-  df$Proportion = df[[.count]] / sum(df[[.count]])
+  df$Proportion = as.numeric(df[[.count]]) / sum(as.numeric(df[[.count]]))
   
   .aa.seq = IMMCOL$cdr3aa
   df[[.aa.seq]] = bunch_translate(df[[.nuc.seq]])
