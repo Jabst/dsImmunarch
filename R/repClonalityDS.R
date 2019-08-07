@@ -1,4 +1,4 @@
-repClonality <- function (dataframe) {
+repClonalityDS <- function (dataframe) {
   library(dsBase)
   
   # check if the input vector is valid (i.e. meets DataSHIELD privacy criteria)
