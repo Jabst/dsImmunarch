@@ -1,12 +1,11 @@
 repClonality <- function (dataframe) {
   library(dsBase)
-  library(dsStats)
   
   print(dim(dataframe))
   
   print(class(dataframe) == "data.frame")
   print(dim(dataframe)[1])
-  nfilter <- setFilterDS()
+  nfilter <- dsBase::setFilterDS()
   print(nfilter)
   
   
