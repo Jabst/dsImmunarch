@@ -20,11 +20,11 @@ geneUsageDS <- function (dataframe) {
   # check <- isValidDS(xvect)
   
   library(immunarch)
-  
+  ret <- parse_mixcr(dataframe)
   
   # return missing value if the input vector is not valid
   #if(!check){
-    result <- geneUsage(dataframe, .gene = "HomoSapiens.TRBJ")
+    result <- geneUsage(ret, .gene = "HomoSapiens.TRBJ")
     #result <- arg1
   #}else{
    # result <- NA
