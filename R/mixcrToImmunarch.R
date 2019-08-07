@@ -24,6 +24,8 @@ parse_mixcr <- function (.dataframe) {
   IMMCOL$type   = c("numeric", "numeric", "character", "character",
                     "character", "character", "character",
                     "integer", "integer", "integer", "integer",
+                    "integer", "integer", "integer", "character")
+  
                     
   
   require(stringr)
