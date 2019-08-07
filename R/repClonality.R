@@ -1,5 +1,6 @@
 repClonality <- function (dataframe) {
   library(dsBase)
+  library(dsStats)
   
   print(dim(dataframe))
   
