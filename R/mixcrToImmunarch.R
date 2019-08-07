@@ -29,6 +29,7 @@ parse_mixcr <- function (.dataframe) {
                     
   
   require(stringr)
+  require(immunarch)
   fix.alleles <- function (.data) {
     .data[[IMMCOL$v]] <- gsub("[*][[:digit:]]*", "", .data[[IMMCOL$v]])
     .data[[IMMCOL$d]] <- gsub("[*][[:digit:]]*", "", .data[[IMMCOL$d]])
