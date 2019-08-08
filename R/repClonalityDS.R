@@ -6,10 +6,11 @@ repClonalityDS <- function (dataframe) {
   
   # return missing value if the input vector is not valid
   if (!check) {
-    library(immunarch)
-    ret <- parse_mixcr(dataframe)
-    return (immunarch::repClonality(ret, .gene = "clonal.prop"))
-  } else {
     return (NA)
   }
+  
+  library(immunarch)
+  ret <- parse_mixcr(dataframe)
+  
+  return (repClonality(ret, .gene = "clonal.prop"))
 }
