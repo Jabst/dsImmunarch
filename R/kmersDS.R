@@ -1,4 +1,6 @@
 kmersDS <- function (dataframe) {
+  library(dsBase)
+  
   # check if the input vector is valid (i.e. meets DataSHIELD privacy criteria)
   check <- isValidDS(dataframe)
   
