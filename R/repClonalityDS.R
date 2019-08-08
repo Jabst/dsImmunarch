@@ -11,6 +11,7 @@ repClonalityDS <- function (dataframe) {
   
   library(immunarch)
   ret <- parse_mixcr(dataframe)
+  clonality <- repClonality(ret, .gene = "clonal.prop")
   
-  return (repClonality(ret, .gene = "clonal.prop"))
+  return (clonality)
 }
