@@ -7,7 +7,9 @@ Title: DataSHIELD server side wrapper for Immunarch functions
 Description: DataSHIELD server side wrapper for Immunarch functions
 AggregateMethods: geneUsageDS,
     repClonalityDS,
-    kmersDS
+    kmersDS,
+    repOverlapDS,
+    repExploreDS
 AssignMethods: log=base::log
 Depends: R (>= 3.4.0)
 Options: datashield.privacyLevel=5
