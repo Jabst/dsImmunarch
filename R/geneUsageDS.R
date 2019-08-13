@@ -1,34 +1,10 @@
-
-#'
-#' @title Computes statistical mean of a vectores
-#' @description Calculates the mean value.
-#' @details if the length of input vector is less than the set filter
-#' a missing value is returned.
-#' @param xvect a vector
-#' @return a numeric, the statistical mean
-#' @author Gaye, Not A.
-#' @export
-#'
-
-#library(immunarch)
-
-geneUsageDS <- function (dataframe) {
-  
-  
-  
+geneUsageDS <- function (dataframe, ) {
   # check if the input vector is valid (i.e. meets DataSHIELD privacy criteria)
-  # check <- isValidDS(xvect)
+  if(!isValidDS(dataframe)) {
+    return (NA)
+  }
   
   library(immunarch)
   ret <- parse_mixcr(dataframe)
-  
-  # return missing value if the input vector is not valid
-  #if(!check){
-    result <- geneUsage(ret, .gene = "HomoSapiens.TRBJ")
-    #result <- arg1
-  #}else{
-   # result <- NA
-  #}
-  
-  return(result)
+  return(geneUsage(ret, .gene = gene))
 }
