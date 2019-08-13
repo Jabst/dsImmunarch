@@ -1,4 +1,4 @@
-geneUsageDS <- function (dataframe, ) {
+geneUsageDS <- function (dataframe, gene) {
   # check if the input vector is valid (i.e. meets DataSHIELD privacy criteria)
   if(!isValidDS(dataframe)) {
     return (NA)
